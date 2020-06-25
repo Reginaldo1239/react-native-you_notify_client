@@ -1,40 +1,60 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Login from '../../screens/public/login';
+
+
+import EmailLogin from '../../screens/public/login/email/index';
 import Name from '../../screens/public/register_user/sub_screens/name';
 import Email from '../../screens/public/register_user/sub_screens/email';
 import DateOfBirth from '../../screens/public/register_user/sub_screens/date_of_birth'
 import Country from '../../screens/public/register_user/sub_screens/country';
 import Password from '../../screens/public/register_user/sub_screens/password';
 import Password1 from '../../screens/public/login/password'
+
+import Home from '../../screens/private/home';
+import Registered from '../../screens/private/registered';
+
+ 
+
 export default function RouterPublic(){
     const Stack = createStackNavigator();
     return(
         <Stack.Navigator 
-       
           headerMode={'none'}>
-            <Stack.Screen 
-            name='/' component= {Password1}/>
-        
+            <Stack.Screen  
+            name='Login' component= {Private}/>     
               <Stack.Screen 
             name='RegisterUser' component= {RegisterUser}/>
-                
+              <Stack.Screen name='Home' component = {Home}/>
         </Stack.Navigator>
     ) 
 }
+ 
+ function Private(){
+  const Stack = createStackNavigator();
+  const Tab = createBottomTabNavigator()
+  return (
+      <Tab.Navigator
+      headerMode={'none'}>
+          <Tab.Screen name='Home' component={Home}/>
+          <Tab.Screen name='Registered' component ={ Registered}/>
+      </Tab.Navigator>
+  )
+ }
 
-const config = {
-    animation: 'spring',
-    config: {
-      stiffness: 1000,
-      damping: 50000,
-      mass: 3,
-      overshootClamping: true,
-      restDisplacementThreshold: 0.01,
-      restSpeedThreshold: 0.01,
-    },
-  };
+
+function RouterLogin(){
+  const Stack = createStackNavigator();
+  return(
+    <Stack.Navigator
+    headerMode={'none'}>
+        <Stack.Screen name='/' component={EmailLogin} ></Stack.Screen>
+        <Stack.Screen name='Login/Password' component={Password1} ></Stack.Screen>
+    </Stack.Navigator>
+  )
+}
+ 
 
 function RegisterUser(){
     const Stack = createStackNavigator();

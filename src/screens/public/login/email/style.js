@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {GRAY_LIGHT} from '../../../config_style';
+import {GRAY_LIGHT} from '../../../../config_style';
 export const Style = StyleSheet.create({
     container:{
         flex:1,

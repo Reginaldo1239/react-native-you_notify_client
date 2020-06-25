@@ -13,6 +13,7 @@ export default function Buttonn(props){
       </TouchableOpacity>
 ):(
         <TouchableOpacity
+        onPress={()=>props.onPress()}
         activeOpacity={0.5}
         style={Style.button} >
              <Text   style={Style.text}>{title}</Text>
