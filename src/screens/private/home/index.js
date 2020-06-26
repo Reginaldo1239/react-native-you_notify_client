@@ -37,19 +37,19 @@ export default function Home(){
      
         }
       })
-
+ 
       const Item = ({ item }) => (
-          
+        <TochableWithoutFeedback onPress={()=>console.log('123')} >
         <View style={Style.container} >
            <View style={Style.boxProfile} >
                 <Image style={{width:'100%',height:'100%',resizeMode:'contain',borderRadius:100}} source={require('../../../assets/imgs/bob.jpg')}/>
            </View> 
            <View style={Style.boxTitle} > 
-               <Text style={Style.boxTitleText}  >reginaldo</Text>
+               <Text style={Style.boxTitleText}>reginaldo</Text>
                <Text style={{fontSize:10 }} >{item.id}</Text>
            </View>
-      
         </View>
+        </TochableWithoutFeedback>
       );
      
     return(

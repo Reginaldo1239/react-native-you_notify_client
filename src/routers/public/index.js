@@ -14,21 +14,30 @@ import Password1 from '../../screens/public/login/password'
 
 import Home from '../../screens/private/home';
 import Registered from '../../screens/private/registered';
+import Profile from '../../screens/private/profile'
 
- 
+import Home1 from '../../screens/private/home1';
+  
+ import ProfileInfluencer from '../../screens/private/profile_influencer';
+ import {GRAY_LIGHT} from '../../config_style'
 
 export default function RouterPublic(){
     const Stack = createStackNavigator();
     return(
         <Stack.Navigator 
-          headerMode={'none'}>
-            <Stack.Screen  
+          headerMode={'none'}
+          screenOptions={{cardStyle:{backgroundColor:GRAY_LIGHT}}}
+          >
+ 
+            <Stack.Screen 
+             screenOptions={{backgroundColor:'red'}}
             name='Login' component= {Private}/>     
               <Stack.Screen 
             name='RegisterUser' component= {RegisterUser}/>
               <Stack.Screen name='Home' component = {Home}/>
-        </Stack.Navigator>
-    ) 
+              <Stack.Screen name='ProfileInfluencer'  component={ProfileInfluencer}  />
+        </Stack.Navigator> 
+    )  
 }
  
  function Private(){
@@ -37,11 +46,12 @@ export default function RouterPublic(){
   return (
       <Tab.Navigator
       headerMode={'none'}>
-          <Tab.Screen name='Home' component={Home}/>
+          <Tab.Screen name='Home' component={Home1}/>
           <Tab.Screen name='Registered' component ={ Registered}/>
+          <Tab.Screen name ='Profile' component ={Profile}/>
       </Tab.Navigator>
   )
- }
+ }    
 
 
 function RouterLogin(){
@@ -71,7 +81,6 @@ function RegisterUser(){
         >      
             <Stack.Screen 
         name='Email' component= {Email}
-   
         />
         <Stack.Screen
         name='Name' component = {Name}
