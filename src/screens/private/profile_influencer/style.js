@@ -13,7 +13,7 @@ export const Style = StyleSheet.create({
     },
     image:{
         width:'100%',
-        height:'70%',
+        height:'50%',
         resizeMode:'contain', 
         borderRadius:100
     },
@@ -25,6 +25,7 @@ export const Style = StyleSheet.create({
     boxButton:{
         width:'50%',
         backgroundColor:RED_STRONG,
+        marginTop:10,
         marginLeft:'25%',
         padding:5,
         borderRadius:25,
@@ -34,6 +35,7 @@ export const Style = StyleSheet.create({
     boxButtonDisabled:{
         width:'50%',
         backgroundColor:RED_STRONG,
+        marginTop:10,
         marginLeft:'25%',
         padding:5,
         borderRadius:25,

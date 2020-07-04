@@ -30,18 +30,18 @@ import {
 import RouterPublic from './src/routers/public'
 import { NavigationContainer } from '@react-navigation/native';
 
-import messaging from '@react-native-firebase/messaging';
+//import messaging from '@react-native-firebase/messaging';
 
 
 function App(){
 
-  useEffect(() => {
+ /* useEffect(() => {
     messaging()
     .getToken()
     .then(token => {
         console.log(token)
     });
-    })
+    })*/
   return (
     <NavigationContainer>
 

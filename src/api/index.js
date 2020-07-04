@@ -12,12 +12,9 @@ export const post =(endPoint,body) =>{
 return new Promise((resolver,reject)=>{
     fetch(BASEURL+endPoint, {
         method: 'POST',
-        headers: {
-          Accept: 'application/json',
-          'Content-Type': 'application/json'
-        },
+        headers:headers,
         body: JSON.stringify(body)
-      }).then((data)=>resolver({status:data.json()}))
+      }).then((data)=>resolver({status:data.status,data:data.json()}))
 
 })
 
@@ -35,3 +32,23 @@ export const get =(endPoint) =>{
  
     }
 
+
+export const del = (endpoint,body)=>{
+
+    return new Promise((resolver,reject)=>{
+        fetch(BASEURL+endpoint,{
+          method: 'DELETE',
+          headers:headers,
+          body: JSON.stringify(body)
+        }).then((data)=>resolver({status:data.status,data:data.json()}))
+    })
+}
+export const put = (endPoint,body)=>{
+  return new Promise((resolver,reject)=>{
+    fetch(BASEURL+endPoint,{
+      method:'PUT',
+      headers:headers,
+      body:JSON.stringify(body)
+    }).then((data)=>resolver({status:data.status,data:data.json()})).catch((e)=>{console.log(e)})
+  }) 
+}

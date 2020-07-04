@@ -36,6 +36,7 @@ export default function RouterPublic(){
             name='RegisterUser' component= {RegisterUser}/>
               <Stack.Screen name='Home' component = {Home}/>
               <Stack.Screen name ='AlterPassword' component ={Profile}/>
+              <Stack.Screen name='ProfileInfluencer'  component={ProfileInfluencer}  />
         </Stack.Navigator> 
     )  
 }
@@ -46,10 +47,9 @@ export default function RouterPublic(){
   return (
       <Tab.Navigator
       headerMode={'none'}>
-          <Tab.Screen name='Home' component={ProfileInfluencer}/>
-          <Tab.Screen name='Registered' component ={ Registered}/>
-          <Tab.Screen name ='Profile' component ={Profile}/>
-          <Stack.Screen name='ProfileInfluencer'  component={ProfileInfluencer}  />
+          <Tab.Screen name='Home' component={Home1}/>
+          <Tab.Screen name='Inscrições' component ={ Registered}/>
+          <Tab.Screen name ='Password' component ={Profile}/>
       </Tab.Navigator>
   )
  }    

@@ -67,4 +67,14 @@ export default class Validation{
              return false;  
          }
      }
+
+    static isNumber  = value=>{
+        value = parseInt(value)
+    
+        if(typeof value ==='number'){
+            return true
+        }else{
+            return false;
+        }
+    }
 } 
