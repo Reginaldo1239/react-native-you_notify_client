@@ -9,7 +9,7 @@ import Label from '../../../../../components/label';
 import ButtonNext from '../../../../../components/button_next';
 import Validation from '../../../../../global/validation';
 
-import {setItem,getItem} from '../../../../../global/LocalStorage';
+import {setItem,getItem,clearAll} from '../../../../../global/LocalStorage';
  
 export default function Password(){
     const [password,setPassword] =useState('')
@@ -27,7 +27,6 @@ export default function Password(){
     if(!Validation.minLength(password,1)){
         setPasswordErro('o campo está vazio');
     }else{
-        
         if(!Validation.minLength(confirmPassword,1)){
             setConfirmPasswordErro('o campo está vazio');
         }else if(!Validation.equalPassword(password,confirmPassword)){
@@ -41,11 +40,15 @@ export default function Password(){
         let email = await getItem('email');
         let name = await getItem('name');
         let dateOfBirth = await getItem('dateOfBirth');
-        console.log(email)
-        console.log(name)
-        console.log(dateOfBirth) 
-
-
+        let post = {
+             name:name,
+             email:email,
+             date_of_birth:dateOfBirth,
+             password,password
+        }
+        //chamar api
+        //
+        clearAll()
    }
     return (
         <Component>

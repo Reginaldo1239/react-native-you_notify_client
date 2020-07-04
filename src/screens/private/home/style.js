@@ -1,7 +1,13 @@
 import {StyleSheet} from 'react-native';
 import {FONT_SIZE} from'../../../config_style';
 export const Style=StyleSheet.create({
-    container:{
+
+    header:{
+        flexDirection:'row-reverse',
+        marginTop:10,
+        marginLeft:10
+    },
+    containerItem:{
         flex:1,
         flexDirection:'row',
         flexWrap:'wrap',
@@ -11,15 +17,15 @@ export const Style=StyleSheet.create({
         paddingTop:10,
         paddingBottom:10
     }
-    ,boxProfile:{
+    ,boxProfileItem:{
         width:'25%',
         height:70
         
     },
-    boxTitle:{
+    boxTitleItem:{
         width:'75%',
     },
-    boxTitleText:{
+    boxTitleTextItem:{
         fontSize:FONT_SIZE
     }
 

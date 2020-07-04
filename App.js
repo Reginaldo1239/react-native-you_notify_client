@@ -10,7 +10,7 @@ import 'react-native-gesture-handler';
  */
 
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   SafeAreaView,
   StyleSheet,
@@ -30,7 +30,18 @@ import {
 import RouterPublic from './src/routers/public'
 import { NavigationContainer } from '@react-navigation/native';
 
-const App: () => React$Node = () => {
+import messaging from '@react-native-firebase/messaging';
+
+
+function App(){
+
+  useEffect(() => {
+    messaging()
+    .getToken()
+    .then(token => {
+        console.log(token)
+    });
+    })
   return (
     <NavigationContainer>
 

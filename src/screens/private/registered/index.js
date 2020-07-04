@@ -32,6 +32,8 @@ const DATA = [
          <FlatList
          data={DATA}
          renderItem={({item})=><Item item={item}></Item>}
+         onEndReached={()=>console.log('dsd')}
+         onEndReachedThreshold={0.3}
          keyExtractor={item=>item.id}
 
          />

@@ -16,8 +16,9 @@ import Home from '../../screens/private/home';
 import Registered from '../../screens/private/registered';
 import Profile from '../../screens/private/profile'
 
-import Home1 from '../../screens/private/home1';
-  
+import Home1 from '../../screens/private/home';
+
+   
  import ProfileInfluencer from '../../screens/private/profile_influencer';
  import {GRAY_LIGHT} from '../../config_style'
 
@@ -28,14 +29,13 @@ export default function RouterPublic(){
           headerMode={'none'}
           screenOptions={{cardStyle:{backgroundColor:GRAY_LIGHT}}}
           >
- 
             <Stack.Screen 
              screenOptions={{backgroundColor:'red'}}
             name='Login' component= {Private}/>     
               <Stack.Screen 
             name='RegisterUser' component= {RegisterUser}/>
               <Stack.Screen name='Home' component = {Home}/>
-              <Stack.Screen name='ProfileInfluencer'  component={ProfileInfluencer}  />
+              <Stack.Screen name ='AlterPassword' component ={Profile}/>
         </Stack.Navigator> 
     )  
 }
@@ -46,9 +46,10 @@ export default function RouterPublic(){
   return (
       <Tab.Navigator
       headerMode={'none'}>
-          <Tab.Screen name='Home' component={Home1}/>
+          <Tab.Screen name='Home' component={ProfileInfluencer}/>
           <Tab.Screen name='Registered' component ={ Registered}/>
           <Tab.Screen name ='Profile' component ={Profile}/>
+          <Stack.Screen name='ProfileInfluencer'  component={ProfileInfluencer}  />
       </Tab.Navigator>
   )
  }    

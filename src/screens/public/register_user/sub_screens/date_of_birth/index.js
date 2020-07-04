@@ -44,7 +44,7 @@ export default function DateOfBirth(props){
           }else{
             setItem('dateOfBirth',dateInput)
             navigation.navigate('RegisterUser',{screen:'Password'});
-         //   navigation.navigate('RegisterUser',{screen:'Name'})
+  
           }
       }
 return( 

@@ -1,5 +1,5 @@
 import {StyleSheet}from 'react-native';
-
+import {RED_STRONG} from '../../../config_style';
 export const Style = StyleSheet.create({
     boxImage:{
         flex:1,
@@ -17,7 +17,27 @@ export const Style = StyleSheet.create({
         resizeMode:'contain', 
         borderRadius:100
     },
-       boxButton: {
-        width:'100%'
+       Button: {
+      
+        
+
+    },
+    boxButton:{
+        width:'50%',
+        backgroundColor:RED_STRONG,
+        marginLeft:'25%',
+        padding:5,
+        borderRadius:25,
+     
+      
+    },
+    boxButtonDisabled:{
+        width:'50%',
+        backgroundColor:RED_STRONG,
+        marginLeft:'25%',
+        padding:5,
+        borderRadius:25,
+        opacity:0.5
+
     }
-})
+}) 

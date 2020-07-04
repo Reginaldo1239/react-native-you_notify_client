@@ -1,5 +1,5 @@
 import React from 'react';
-import {View,Text,Image} from 'react-native'
+import {View,Text,Image,TouchableWithoutFeedback} from 'react-native'
 import Button from '../../../components/button';
 import { WebView } from 'react-native-webview';
  
@@ -18,12 +18,16 @@ export default function ProfileInfluencer(){
                 </View>
                 
     </View> 
-         <View style={{flex:2,width:'100%',flexDirection:'row'}}>
-                        <View style={Style.boxButton} >
-                                <Button
-                                title={'seguir'}
-                                onPress={()=>console.log('a')}
-                                ></Button>
+         <View style={{flex:2,width:'100%',flexDirection:'column'}}>
+                        <View style={Style.boxButton} > 
+                                <TouchableWithoutFeedback onPress={()=>console.log('123')} >
+                                        <Text style={{color:'white',fontSize:22,textAlign:'center'}}>seguir</Text>
+                                 </TouchableWithoutFeedback>
+                        </View>
+                        <View style={Style.boxButtonDisabled} > 
+                                <TouchableWithoutFeedback onPress={()=>console.log('123')} >
+                                         <Text style={{color:'white',fontSize:22,textAlign:'center'}}>seguindo</Text>
+                                 </TouchableWithoutFeedback>
                         </View>
                     
             
